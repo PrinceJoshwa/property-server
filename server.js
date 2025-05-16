@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import connectDB from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
-import bookingRoutes from './routes/bookingRoutes.js';
+// import bookingRoutes from './routes/bookingRoutes.js';
 
 
 dotenv.config();
@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({
   origin: [
     process.env.CLIENT_URL,
-    'https://schedura-landing-page.vercel.app',
+    'https://property-client-six.vercel.app',
     'http://localhost:5173'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -33,7 +33,7 @@ app.use(morgan('dev'));
 
 // API routes
 app.use('/api/users', userRoutes);
-app.use('/api/bookings', bookingRoutes);
+// app.use('/api/bookings', bookingRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
